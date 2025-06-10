@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado de Cálculo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SimulaCiências</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="calculo.html">Cálculo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="fisica.html">Física Ondulatória</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Simulado de Cálculo</h1>
+        
+        <div id="simulado-container">
+            <div class="card mb-4 questao" id="questao-1">
+                <div class="card-body">
+                    <h5 class="card-title">Questão 1</h5>
+                    <p class="card-text">Calcule a derivada da função f(x) = x² + 3x + 2. [grafico]</p>
+                    <canvas class="grafico-questao mb-3" data-questao="1"></canvas>
+                    <div class="alternativas">
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-1" id="1-A" value="A">
+                            <label class="form-check-label" for="1-A">A) 2x + 3</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-1" id="1-B" value="B">
+                            <label class="form-check-label" for="1-B">B) 2x + 2</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-1" id="1-C" value="C">
+                            <label class="form-check-label" for="1-C">C) x² + 3</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-1" id="1-D" value="D">
+                            <label class="form-check-label" for="1-D">D) 2x</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4 questao" id="questao-2">
+                <div class="card-body">
+                    <h5 class="card-title">Questão 2</h5>
+                    <p class="card-text">Determine a integral indefinida de f(x) = 2x + 1. [grafico]</p>
+                    <canvas class="grafico-questao mb-3" data-questao="2"></canvas>
+                    <div class="alternativas">
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-2" id="2-A" value="A">
+                            <label class="form-check-label" for="2-A">A) x² + x</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-2" id="2-B" value="B">
+                            <label class="form-check-label" for="2-B">B) x² + x + C</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-2" id="2-C" value="C">
+                            <label class="form-check-label" for="2-C">C) 2x² + x</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-2" id="2-D" value="D">
+                            <label class="form-check-label" for="2-D">D) 2x² + 1</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4 questao" id="questao-3">
+                <div class="card-body">
+                    <h5 class="card-title">Questão 3</h5>
+                    <p class="card-text">Calcule o limite quando x tende a infinito de (x² + 2x) / (x² + 1). [grafico]</p>
+                    <canvas class="grafico-questao mb-3" data-questao="3"></canvas>
+                    <div class="alternativas">
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-3" id="3-A" value="A">
+                            <label class="form-check-label" for="3-A">A) 0</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-3" id="3-B" value="B">
+                            <label class="form-check-label" for="3-B">B) 2</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-3" id="3-C" value="C">
+                            <label class="form-check-label" for="3-C">C) 1</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-3" id="3-D" value="D">
+                            <label class="form-check-label" for="3-D">D) infinito</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-5">
+                <button class="btn btn-primary btn-lg" onclick="verificarRespostas()">Verificar Respostas</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Função para criar gráficos das questões
+    function criarGraficos() {
+        const canvasElements = document.querySelectorAll('.grafico-questao');
+        canvasElements.forEach(canvas => {
+            const ctx = canvas.getContext('2d');
+            const questaoId = canvas.dataset.questao;
+            
+            // Exemplo de gráfico para função quadrática
+            const data = {
+                labels: Array.from({length: 21}, (_, i) => i - 10),
+                datasets: [{
+                    label: 'f(x)',
+                    data: Array.from({length: 21}, (_, i) => Math.pow(i - 10, 2)),
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            };
+
+            new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    scales: {
+                        x: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'x'
+                            }
+                        },
+                        y: {
+                            display: true,
+                            title: {
+                                display: true,
+                                text: 'y'
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    }
+
+    // Função para verificar respostas
+    function verificarRespostas() {
+        const respostas = {};
+        document.querySelectorAll('input[type="radio"]:checked').forEach(input => {
+            const questaoId = input.name.split('-')[1];
+            respostas[questaoId] = input.value;
+        });
+
+        // Respostas corretas definidas diretamente no JavaScript
+        const respostasCorretas = {
+            1: { resposta: 'A', explicacao: 'A derivada de uma função quadrática segue a regra: se f(x) = ax² + bx + c, então f\'(x) = 2ax + b' },
+            2: { resposta: 'B', explicacao: 'A integral indefinida adiciona uma constante C e aumenta o expoente em 1, dividindo pelo novo expoente' },
+            3: { resposta: 'C', explicacao: 'Para limites no infinito de funções racionais, compare os graus dos polinômios no numerador e denominador' }
+        };
+
+        // Verificar respostas e mostrar feedback
+        Object.entries(respostas).forEach(([questaoId, resposta]) => {
+            const questaoElement = document.querySelector(`#questao-${questaoId}`);
+            const correto = resposta === respostasCorretas[questaoId].resposta;
+            
+            const feedback = document.createElement('div');
+            feedback.className = `alert alert-${correto ? 'success' : 'danger'} mt-3`;
+            feedback.innerHTML = correto ? 
+                'Correto! ' + respostasCorretas[questaoId].explicacao :
+                'Incorreto. ' + respostasCorretas[questaoId].explicacao + '<br>Dica: Revise os conceitos fundamentais e tente visualizar o problema graficamente.';
+            
+            // Remover feedback anterior se existir
+            const feedbackAnterior = questaoElement.querySelector('.alert');
+            if (feedbackAnterior) {
+                feedbackAnterior.remove();
+            }
+            
+            questaoElement.querySelector('.card-body').appendChild(feedback);
+        });
+    }
+
+    // Inicializar gráficos quando a página carregar
+    document.addEventListener('DOMContentLoaded', criarGraficos);
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

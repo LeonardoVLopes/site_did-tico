@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado de Física Ondulatória</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        .wave-canvas {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        .wave-controls {
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+        .wave-controls label {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">SimulaCiências</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="calculo.html">Cálculo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="fisica.html">Física Ondulatória</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Simulado de Física Ondulatória</h1>
+        
+        <div id="simulado-container">
+            <div class="card mb-4 questao" id="questao-1">
+                <div class="card-body">
+                    <h5 class="card-title">Questão 1</h5>
+                    <p class="card-text">Uma onda se propaga com frequência de 20 Hz. Qual é seu período? [onda]</p>
+                    
+                    <div class="wave-simulation">
+                        <canvas class="wave-canvas" width="600" height="300" data-questao="1"></canvas>
+                        <div class="wave-controls">
+                            <label>
+                                Amplitude:
+                                <input type="range" class="amplitude-control" min="10" max="100" value="50">
+                            </label>
+                            <label>
+                                Frequência:
+                                <input type="range" class="frequency-control" min="1" max="10" value="5">
+                            </label>
+                            <label>
+                                Velocidade:
+                                <input type="range" class="speed-control" min="1" max="10" value="5">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="alternativas">
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-1" id="1-A" value="A">
+                            <label class="form-check-label" for="1-A">A) 20 segundos</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-1" id="1-B" value="B">
+                            <label class="form-check-label" for="1-B">B) 0,05 segundos</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-1" id="1-C" value="C">
+                            <label class="form-check-label" for="1-C">C) 0,5 segundos</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-1" id="1-D" value="D">
+                            <label class="form-check-label" for="1-D">D) 2 segundos</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4 questao" id="questao-2">
+                <div class="card-body">
+                    <h5 class="card-title">Questão 2</h5>
+                    <p class="card-text">Analise o fenômeno de interferência entre duas ondas em fase. [onda]</p>
+                    
+                    <div class="wave-simulation">
+                        <canvas class="wave-canvas" width="600" height="300" data-questao="2"></canvas>
+                        <div class="wave-controls">
+                            <label>
+                                Amplitude:
+                                <input type="range" class="amplitude-control" min="10" max="100" value="50">
+                            </label>
+                            <label>
+                                Frequência:
+                                <input type="range" class="frequency-control" min="1" max="10" value="5">
+                            </label>
+                            <label>
+                                Velocidade:
+                                <input type="range" class="speed-control" min="1" max="10" value="5">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="alternativas">
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-2" id="2-A" value="A">
+                            <label class="form-check-label" for="2-A">A) A amplitude da onda resultante aumenta</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-2" id="2-B" value="B">
+                            <label class="form-check-label" for="2-B">B) A amplitude da onda resultante diminui</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-2" id="2-C" value="C">
+                            <label class="form-check-label" for="2-C">C) As ondas se cancelam completamente</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-2" id="2-D" value="D">
+                            <label class="form-check-label" for="2-D">D) Não há alteração na amplitude</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4 questao" id="questao-3">
+                <div class="card-body">
+                    <h5 class="card-title">Questão 3</h5>
+                    <p class="card-text">Explique o efeito Doppler observado na imagem. [onda]</p>
+                    
+                    <div class="wave-simulation">
+                        <canvas class="wave-canvas" width="600" height="300" data-questao="3"></canvas>
+                        <div class="wave-controls">
+                            <label>
+                                Amplitude:
+                                <input type="range" class="amplitude-control" min="10" max="100" value="50">
+                            </label>
+                            <label>
+                                Frequência:
+                                <input type="range" class="frequency-control" min="1" max="10" value="5">
+                            </label>
+                            <label>
+                                Velocidade:
+                                <input type="range" class="speed-control" min="1" max="10" value="5">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="alternativas">
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-3" id="3-A" value="A">
+                            <label class="form-check-label" for="3-A">A) A frequência permanece constante</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-3" id="3-B" value="B">
+                            <label class="form-check-label" for="3-B">B) A amplitude aumenta</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-3" id="3-C" value="C">
+                            <label class="form-check-label" for="3-C">C) O comprimento de onda não muda</label>
+                        </div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="questao-3" id="3-D" value="D">
+                            <label class="form-check-label" for="3-D">D) A frequência observada muda com o movimento relativo</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mb-5">
+                <button class="btn btn-primary btn-lg" onclick="verificarRespostas()">Verificar Respostas</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    class WaveSimulation {
+        constructor(canvas, controls) {
+            this.canvas = canvas;
+            this.ctx = canvas.getContext('2d');
+            this.width = canvas.width;
+            this.height = canvas.height;
+            this.centerY = this.height / 2;
+            this.controls = controls;
+            this.time = 0;
+            
+            this.amplitude = 50;
+            this.frequency = 5;
+            this.speed = 5;
+            
+            this.setupControls();
+            this.animate();
+        }
+
+        setupControls() {
+            const amplitudeControl = this.controls.querySelector('.amplitude-control');
+            const frequencyControl = this.controls.querySelector('.frequency-control');
+            const speedControl = this.controls.querySelector('.speed-control');
+
+            amplitudeControl.addEventListener('input', (e) => {
+                this.amplitude = parseInt(e.target.value);
+            });
+
+            frequencyControl.addEventListener('input', (e) => {
+                this.frequency = parseInt(e.target.value);
+            });
+
+            speedControl.addEventListener('input', (e) => {
+                this.speed = parseInt(e.target.value);
+            });
+        }
+
+        drawWave() {
+            this.ctx.clearRect(0, 0, this.width, this.height);
+            this.ctx.beginPath();
+            this.ctx.moveTo(0, this.centerY);
+
+            for (let x = 0; x < this.width; x++) {
+                const y = this.centerY + 
+                          this.amplitude * 
+                          Math.sin((x * this.frequency * 0.02) + 
+                          (this.time * this.speed * 0.05));
+                this.ctx.lineTo(x, y);
+            }
+
+            this.ctx.strokeStyle = '#0d6efd';
+            this.ctx.lineWidth = 2;
+            this.ctx.stroke();
+        }
+
+        animate() {
+            this.time++;
+            this.drawWave();
+            requestAnimationFrame(() => this.animate());
+        }
+    }
+
+    // Inicializar simulações de onda
+    document.addEventListener('DOMContentLoaded', () => {
+        const waveCanvases = document.querySelectorAll('.wave-canvas');
+        waveCanvases.forEach(canvas => {
+            const controls = canvas.parentElement.querySelector('.wave-controls');
+            new WaveSimulation(canvas, controls);
+        });
+    });
+
+    function verificarRespostas() {
+        const respostasCorretas = {
+            'questao-1': 'B',
+            'questao-2': 'A',
+            'questao-3': 'D'
+        };
+
+        const explicacoes = {
+            'questao-1': 'O período é o inverso da frequência. Para uma frequência de 20 Hz, o período é 1/20 = 0,05 segundos.',
+            'questao-2': 'Quando duas ondas em fase se encontram, ocorre interferência construtiva, resultando em uma onda com amplitude maior.',
+            'questao-3': 'O efeito Doppler é o fenômeno onde a frequência observada de uma onda muda devido ao movimento relativo entre a fonte e o observador.'
+        };
+
+        let acertos = 0;
+        let feedback = '';
+
+        for (let questao in respostasCorretas) {
+            const respostaSelecionada = document.querySelector(`input[name="${questao}"]:checked`);
+            const questaoElement = document.getElementById(questao);
+            
+            if (!respostaSelecionada) {
+                feedback += `<p>Questão ${questao.split('-')[1]}: Por favor, selecione uma resposta.</p>`;
+                continue;
+            }
+
+            const estaCorreta = respostaSelecionada.value === respostasCorretas[questao];
+            if (estaCorreta) {
+                acertos++;
+                questaoElement.classList.add('border-success');
+                questaoElement.classList.remove('border-danger');
+            } else {
+                questaoElement.classList.add('border-danger');
+                questaoElement.classList.remove('border-success');
+            }
+
+            feedback += `<p>Questão ${questao.split('-')[1]}: ${estaCorreta ? 'Correta' : 'Incorreta'}</p>`;
+            feedback += `<p><strong>Explicação:</strong> ${explicacoes[questao]}</p>`;
+        }
+
+        const resultado = `
+            <div class="alert ${acertos === 3 ? 'alert-success' : 'alert-info'}">
+                <h4>Resultado: ${acertos}/3</h4>
+                ${feedback}
+            </div>
+        `;
+
+        const resultadoDiv = document.createElement('div');
+        resultadoDiv.innerHTML = resultado;
+        document.getElementById('simulado-container').insertBefore(
+            resultadoDiv,
+            document.querySelector('.text-center.mb-5')
+        );
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

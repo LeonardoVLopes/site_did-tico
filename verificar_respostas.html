@@ -1,0 +1,65 @@
+<?php
+require_once 'config.php';
+
+// Receber dados do POST
+$dados = json_decode(file_get_contents('php://input'), true);
+
+// Definir as respostas corretas e explicações
+$questoes_info = [
+    1 => [
+        'resposta_correta' => 'A',
+        'explicacao' => 'A derivada de uma função quadrática segue a regra: se f(x) = ax² + bx + c, então f\'(x) = 2ax + b',
+        'categoria' => 'Cálculo'
+    ],
+    2 => [
+        'resposta_correta' => 'B',
+        'explicacao' => 'A integral indefinida adiciona uma constante C e aumenta o expoente em 1, dividindo pelo novo expoente',
+        'categoria' => 'Cálculo'
+    ],
+    3 => [
+        'resposta_correta' => 'C',
+        'explicacao' => 'Para limites no infinito de funções racionais, compare os graus dos polinômios no numerador e denominador',
+        'categoria' => 'Cálculo'
+    ],
+    4 => [
+        'resposta_correta' => 'B',
+        'explicacao' => 'O período é o inverso da frequência: T = 1/f',
+        'categoria' => 'Física Ondulatória'
+    ],
+    5 => [
+        'resposta_correta' => 'A',
+        'explicacao' => 'Na interferência construtiva, as ondas em fase se somam, aumentando a amplitude',
+        'categoria' => 'Física Ondulatória'
+    ],
+    6 => [
+        'resposta_correta' => 'D',
+        'explicacao' => 'O efeito Doppler ocorre quando há movimento relativo entre a fonte e o observador, alterando a frequência percebida',
+        'categoria' => 'Física Ondulatória'
+    ]
+];
+
+$resultados = [];
+
+foreach ($dados as $questaoId => $respostaUsuario) {
+    $questao = $questoes_info[$questaoId];
+    $correto = $questao['resposta_correta'] === $respostaUsuario;
+
+    // Preparar feedback personalizado
+    $resultados[$questaoId] = [
+        'correto' => $correto,
+        'explicacao' => $questao['explicacao']
+    ];
+
+    // Adicionar dicas específicas baseadas na categoria
+    if (!$correto) {
+        if ($questao['categoria'] === 'Cálculo') {
+            $resultados[$questaoId]['dica'] = 'Revise os conceitos fundamentais e tente visualizar o problema graficamente.';
+        } else if ($questao['categoria'] === 'Física Ondulatória') {
+            $resultados[$questaoId]['dica'] = 'Observe atentamente o comportamento da onda na simulação e relacione com os conceitos teóricos.';
+        }
+    }
+}
+
+// Retornar resultados em formato JSON
+header('Content-Type: application/json');
+echo json_encode($resultados);
